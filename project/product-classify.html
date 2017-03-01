@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>商品管理----商品分类管理step1</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/product-classify.css" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="img/logo-white.png" alt=""/>
+        </a>
+        <button type="button" class="exit">退出</button>
+    </div>
+    <!--左侧导航-->
+    <div class="aside-nav" id="aside-nav">
+        <p class="menubtn" id="menubtn">
+            <i class="caidan"></i><!--<img src="img/caidan.png" alt=""/>-->
+        </p>
+        <ul class="menu" id="aside-menu">
+            <li class="shangpin active" data-tip="商品管理">
+                <a href="#">
+                    <i class="nav-icon"></i>
+                    <span>商品管理</span>
+                </a>
+            </li>
+            <li class="jiaoyi" data-tip="交易管理">
+                <a href="trade.html">
+                    <i class="nav-icon"></i>
+                    <span>交易管理</span>
+                </a>
+            </li>
+            <li class="account" data-tip="我的账户">
+                <a href="account-recharge1.html">
+                    <i class="nav-icon"></i>
+                    <span>我的账户</span>
+                </a>
+            </li>
+            <li class="xiajia" data-tip="管理下家">
+                <a href="my-partner1.html">
+                    <i class="nav-icon"></i>
+                    <span>管理下家</span>
+                </a>
+            </li>
+            <li class="safety" data-tip="安全管理">
+                <a href="safety-mima.html">
+                    <i class="nav-icon"></i>
+                    <span>安全管理</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main">
+        <!--商品管理导航-->
+        <div class="main-nav">
+            <h3>商品管理</h3>
+            <ul>
+                <li>
+                    <a href="publish-product1.html">发布商品</a>
+                </li>
+                <li>
+                    <a href="sale.html">出售中</a>
+                </li>
+                <li>
+                    <a href="soldout-product.html">已下架</a>
+                </li>
+                <li class="active">
+                    <a href="#">分类管理</a>
+                </li>
+            </ul>
+        </div>
+        <!--右侧主要内容-->
+        <div class="content">
+            <h3>商品分类设置<button type="button" class="addnew">＋新增分类</button></h3>
+            <div class="classify-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col-1">排序</th>
+                            <th class="col-2">分类</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="order">
+                                <div>1</div>
+                            </td>
+                            <td>
+                                <div>衣服</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="" class="addpro">加入商品</a>
+                                    <button type="button" class="deletepro">删除</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                <div>2</div>
+                            </td>
+                            <td>
+                                <div>包包</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="" class="addpro">加入商品</a>
+                                    <button type="button" class="deletepro">删除</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                <div>3</div>
+                            </td>
+                            <td>
+                                <div>帽子</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="" class="addpro">加入商品</a>
+                                    <button type="button" class="deletepro">删除</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                <div>4</div>
+                            </td>
+                            <td>
+                                <div>鞋子</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="" class="addpro">加入商品</a>
+                                    <button type="button" class="deletepro">删除</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         </div>
+    </div>
+    <!--左侧导航鼠标悬停的提示框-->
+    <div class="aside-nav-hover">
+        <div class="triangle"></div>
+        <div class="nav-text"></div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function(){
+//            点击删除，删除商品
+            $('.deletepro').click(function(){
+                $(this).parents('tr').remove();
+            })
+        })
+    </script>
+</body>
+</html>

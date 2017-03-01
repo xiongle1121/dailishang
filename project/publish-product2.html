@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>商品管理----发布商品step2</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/publish-product2.css" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="img/logo-white.png" alt=""/>
+        </a>
+        <button type="button" class="exit">退出</button>
+    </div>
+    <!--左侧导航-->
+    <div class="aside-nav" id="aside-nav">
+        <p class="menubtn" id="menubtn">
+            <i class="caidan"></i><!--<img src="img/caidan.png" alt=""/>-->
+        </p>
+        <ul class="menu" id="aside-menu">
+            <li class="shangpin active" data-tip="商品管理">
+                <a href="#">
+                    <i class="nav-icon"></i>
+                    <span>商品管理</span>
+                </a>
+            </li>
+            <li class="jiaoyi" data-tip="交易管理">
+                <a href="trade.html">
+                    <i class="nav-icon"></i>
+                    <span>交易管理</span>
+                </a>
+            </li>
+            <li class="account" data-tip="我的账户">
+                <a href="account-recharge1.html">
+                    <i class="nav-icon"></i>
+                    <span>我的账户</span>
+                </a>
+            </li>
+            <li class="xiajia" data-tip="管理下家">
+                <a href="my-partner1.html">
+                    <i class="nav-icon"></i>
+                    <span>管理下家</span>
+                </a>
+            </li>
+            <li class="safety" data-tip="安全管理">
+                <a href="safety-mima.html">
+                    <i class="nav-icon"></i>
+                    <span>安全管理</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main">
+        <!--商品管理导航-->
+        <div class="main-nav">
+            <h3>商品管理</h3>
+            <ul>
+                <li class="active">
+                    <a href="publish-product1.html">发布商品</a>
+                </li>
+                <li>
+                    <a href="sale.html">出售中</a>
+                </li>
+                <li>
+                    <a href="soldout-product.html">已下架</a>
+                </li>
+                <li>
+                    <a href="">分类管理</a>
+                </li>
+            </ul>
+        </div>
+        <!--右侧主要内容-->
+        <div class="content">
+            <h3>发布商品</h3>
+            <div class="details-container">
+                <form action="" method="">
+                    <!--商品图片-->
+                    <div class="proPic">
+                        <h4>商品图片 <span>(最多添加4张)</span></h4>
+                        <div class="uploadPic">
+                            <a class="a-upload">
+                                <input type="file">上传图片
+                            </a>
+                        </div>
+                    </div>
+                    <!--商品信息-->
+                    <div class="proInfo">
+                        <h4>商品信息</h4>
+                        <p>
+                            <span>类目&nbsp;:&nbsp; </span>
+                            <input type="text" name="protype" value=""/>
+                        </p>
+                        <p>
+                            <span>标题<em>＊</em></span>
+                            <input type="text" placeholder="请输入商品名称 (少于30个字)" value=""/>
+                        </p>
+                        <p>
+                            <span>简述<em>＊</em></span>
+                            <input type="text" placeholder="请输入商品描述 (少于100字)" value=""/>
+                        </p>
+                    </div>
+                    <!--商品设置-->
+                    <div class="proSet" id="proSet">
+                        <h4>商品设置</h4>
+                        <p class="prompt">
+                            商品参数设置<em>＊</em> <span>(例 : 参数类型 : 材质&nbsp;&nbsp;&nbsp;&nbsp;参数数值 : 80%棉)</span>
+                            <a href="" class="addtype" id="addtype">添加</a>
+                        </p>
+                        <div class="preferences">
+                            <p>
+                                <span>参数类型</span><br/>
+                                <input type="text" name="refertype1" value=""/>
+                            </p>
+                            <p>
+                                <span>参数数值</span><br/>
+                                <input type="text" name="refernum1" value=""/>
+                            </p>
+                            <button type="button" class="dele">删除</button>
+                        </div>
+                        <div class="preferences">
+                            <p>
+                                <span>参数类型</span><br/>
+                                <input type="text" name="refertype1" value=""/>
+                            </p>
+                            <p>
+                                <span>参数数值</span><br/>
+                                <input type="text" name="refernum2" value=""/>
+                            </p>
+                            <button type="button" class="dele">删除</button>
+                        </div>
+                    </div>
+                    <!--商品定价设置-->
+                    <div class="proPrice">
+                        <h4>商品定价设置</h4>
+                        <div class="salePolicy">
+                            <p>累计销售返点政策<a href="" class="help"></a></p>
+                            <div class="selectPeriod">
+                                <p class="period" id="period">
+                                    <span class="danxuan on">周</span>
+                                    <span class="danxuan">月</span>
+                                </p>
+                                <p class="switch" id="switch">
+                                    <i>是否开启 :</i>
+                                    <span class="danxuan on">是</span>
+                                    <span class="danxuan">否</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="priceAdd">
+                            <p class="priceAddTit">定价添加</p>
+                            <div class="priceContent" id="priceContent">
+                                <dl>
+                                    <dt>型号1</dt>
+                                    <dd class="dele">删除</dd>
+                                </dl>
+                                <dl>
+                                    <dt>型号2</dt>
+                                    <dd class="dele">删除</dd>
+                                </dl>
+                                <dl class="addprice-region" id="addprice-region">
+                                    <dt></dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="details-type" id="details-type">
+                            <p class="typeTit">型号1</p>
+                            <div class="type-container">
+                                <div class="type-content">
+                                    <span>型号<em>＊</em></span>
+                                    <input type="text" name="model" value=""/>
+                                    <span>库存<em>＊</em></span>
+                                    <input type="text" name="stock" value=""/>
+                                    <button type="button" class="addRegion" id="addRegion">添加区间</button>
+                                </div>
+                                <div class="region" id="region">
+                                    <div class="data">
+                                        <p>
+                                            <input type="text" name="minvalue" value=""/>件 -
+                                            <input type="text" name="maxvalue" value=""/>件
+                                        </p>
+                                        <p>
+                                            单价&yen;
+                                            <input type="text" name="price" value=""/>
+                                        </p>
+                                        <button type="button" class="dele">删除</button>
+                                    </div>
+                                    <div class="data">
+                                        <p>
+                                            <input type="text" name="minvalue1" value=""/>件 -
+                                            <input type="text" name="maxvalue1" value=""/>件
+                                        </p>
+                                        <p>
+                                            单价&yen;
+                                            <input type="text" name="price1" value=""/>
+                                        </p>
+                                        <button type="button" class="dele">删除</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--邮费设置-->
+                    <div class="proPostage clear">
+                        <h4>邮费设置</h4>
+                        <div id="post">
+                            <span class="danxuan on">包邮</span>
+                            <span class="danxuan lf custom">自定义</span>
+                            <div class="user-define" id="user-define">
+                                <p>
+                                    <input class="number" type="text" name="number" value=""/>件商品内，运费¥<input type="text" name="price" value=""/>
+                                </p>
+                                <p>
+                                    每增加<input type="text" name="addnum" value=""/>件商品，运费增加¥<input type="text" name="addPrice" value=""/>元
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="surepublish">确认发布</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--左侧导航鼠标悬停的提示框-->
+    <div class="aside-nav-hover">
+        <div class="triangle"></div>
+        <div class="nav-text"></div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function(){
+//            删除
+            $('.dele').click(function(){
+                $(this).parent().remove();
+            });
+//            jq模拟单选框
+            $('#period .danxuan,#switch .danxuan,#post .danxuan').click(function(){
+                $(this).addClass('on').siblings().removeClass('on');
+                if($('#post span.custom').hasClass('on')){
+                    $('#user-define').css('display','block');
+                }else{
+                    $('#user-define').css('display','none');
+                }
+            });
+            //添加商品参数设置
+            $('#addtype').click(function(e){
+                e.preventDefault();
+                $('.preferences:first').clone(true).addClass('clone').appendTo($('#proSet'));
+                $('.preferences.clone').find('input').val('');
+            });
+            //定价添加 添加型号
+            $('#addprice-region').click(function(){
+                $('#priceContent dl:first-child').clone(true).insertBefore($(this)).children('dt').text('型号'+($('#priceContent dl').size()-1));
+            });
+            //型号框的显示、隐藏
+            $('#priceContent dl:not(:last-child)').click(function(){
+                $('#details-type').show().children('.typeTit').text($(this).children('dt').text());
+            });
+            //型号框下添加区间
+            $('#addRegion').click(function(){
+                $('#region .data:first-child').clone(true).addClass('clone').appendTo($('#region'));
+                $('.data.clone').find('input').val('');
+            })
+        })
+    </script>
+</body>
+</html>

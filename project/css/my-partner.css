@@ -1,0 +1,251 @@
+/********** content 最右侧内容 *****/
+.content{
+    position:absolute;
+    left:180px;
+    right:0;
+    top:0;
+    bottom:0;
+    padding:0 20px;
+    background-color:#fff;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.content h3{
+    white-space:nowrap;
+    height:53px;
+    line-height:53px;
+    padding-left:15px;
+    font-size:18px;
+    font-weight:normal;
+    border-bottom:1px solid #e1e1e1;
+}
+/********** 我的下家页面样式 *********/
+/*搜索行样式*/
+.partner-container .search{
+    height:34px;
+    margin:15px 0 30px;
+    min-width:570px;
+}
+.content .search input{
+    width:140px;
+    padding-left:10px;
+    height:32px;
+    line-height:32px;
+    border:1px solid #e1e1e1;
+    margin:0 10px 0 5px;
+    *vertical-align:middle;
+}
+.content .search button{
+    width:70px;
+    height:32px;
+    text-align:center;
+    line-height:32px;
+    color:#fff;
+    background-color:#fe5757;
+    border-radius:5px;
+    margin-left:50px;
+    *vertical-align:middle;
+}
+/*我的下家具体信息*/
+.line{
+    width:1366px;
+    border-top:1px solid #e1e1e1;
+    margin:12px 0;
+}
+.partner-container .partner{
+    width:1366px;
+    height:126px;
+    line-height:126px;
+    background-color:#E5EBF2;
+    border-radius:10px;
+}
+.partner .pic{
+    float:left;
+    margin:0 20px;
+}
+.partner .pic img{
+    width:100px;
+    height:100px;
+    border-radius:10px;
+}
+.partner i.remark{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+    margin-left:6px;
+    background:url(../img/remark.png) no-repeat 0 0;
+    background-size:contain;
+}
+.partner .partnerbtn{
+    float:right;
+    margin-right:70px;
+}
+.partner .partnerbtn a{
+    display:inline-block;
+    width:98px;
+    text-align:center;
+    height:36px;
+    line-height:36px;
+    color:#fff;
+    background-color:#56ABE4;
+    border-radius:10px;
+    margin-left:50px;
+}
+.partner .partnerbtn .delete{
+    background-color:#fe5757;
+}
+/************ 我的下家 交易明细 页面样式 ***********/
+/*时间 搜索行 样式*/
+.trade-container .search{
+    height:60px;
+    line-height:60px;
+    width:830px;
+    border-bottom:1px solid #e1e1e1;
+}
+.trade-container .search input{
+    width:100px;
+    margin-right:0;
+}
+.trade-container .search a{
+    width:86px;
+    margin-left:20px;
+}
+.trade-container .search span{
+    padding:0 20px;
+    font-weight:bold;
+}
+.trade-container .search em{
+    padding:0 5px;
+}
+/*交易次数、总金额 样式*/
+.trade-container .summary{
+    height:50px;
+    line-height:50px;
+    min-width:290px;
+}
+.trade-container .summary strong{
+    padding:0 20px;
+}
+.trade-container .summary em{
+    color:#fe5757;
+    padding:0 4px;
+}
+/*交易明细 table样式*/
+.gray{
+    color:#666;
+}
+.text-center{
+    text-align:center;
+}
+.text-right{
+    float:right;
+    margin-right:170px;
+    width:12%;
+    text-align:center;
+}
+.tradedetails-table{
+    width:1350px;
+    background-color:#ECF2F8;
+}
+.tradedetails-table thead th{
+    height:44px;
+    font-weight:normal;
+}
+.tradedetails-table tbody td{
+    border-top:1px solid #e1e1e1;
+    height:80px;
+}
+.tradedetails-table tbody .classify img{
+    width:30px;
+    height:30px;
+}
+.tradedetails-table .proname{
+    width:80%;
+    margin:0 auto;
+}
+.tradedetails-table .proname p{
+    height:24px;
+    line-height:24px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.tradedetails-table .proname p a:hover{
+    color:#EB4F38;
+}
+/*********** 邀请下家 页面样式 **********/
+.inviteway{
+    margin:44px 0 0 15px;
+    min-width:1015px;
+}
+.inviteway>div{
+    float:left;
+}
+.inviteway .way1{
+    margin-right:150px;
+}
+.inviteway h4{
+    font-size:16px;
+    font-weight:normal;
+}
+.inviteway h4 span{
+    font-size:12px;
+}
+.inviteway .way1 div{
+    margin:36px 0 0 5px;
+}
+.inviteway .way1 input{
+    width:370px;
+    text-align:center;
+    height:40px;
+    line-height:40px;
+    margin-right:40px;
+    border:1px solid #e1e1e1;
+    border-radius:5px;
+}
+.inviteway .way1 button{
+    width:70px;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+    *vertical-align:5px;
+    border-radius:5px;
+    color:#fff;
+    background-color:#fe5757;
+}
+.inviteway .way2>div{
+    margin:20px 0 0 20px;
+}
+.inviteway .way2 .erweima{
+    float:left;
+    width:90px;
+    height:90px;
+    border:1px solid #e1e1e1;
+    padding:5px;
+    margin-right:16px;
+}
+.inviteway .way2 .erweima img{
+    width:100%;
+    height:100%;
+}
+.inviteway .way2 .link{
+    float:left;
+    width:224px;
+    height:38px;
+    line-height:38px;
+    border:1px solid #e1e1e1;
+    border-radius:5px;
+    font-size:0;
+    margin-top:30px;
+}
+.inviteway .way2 .link a{
+    display:inline-block;
+    width:25%;
+    *width:24%;
+    text-align:center;
+}
+.inviteway .way2 .link img{
+    width:30px;
+    height:auto;
+}

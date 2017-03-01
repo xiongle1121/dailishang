@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>商品管理----出售中的商品</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/sale.css" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="img/logo-white.png" alt=""/>
+        </a>
+        <button type="button" class="exit">退出</button>
+    </div>
+    <!--左侧导航-->
+    <div class="aside-nav" id="aside-nav">
+        <p class="menubtn" id="menubtn">
+            <i class="caidan"></i><!--<img src="img/caidan.png" alt=""/>-->
+        </p>
+        <ul class="menu" id="aside-menu">
+            <li class="shangpin active" data-tip="商品管理">
+                <a href="#">
+                    <i class="nav-icon"></i>
+                    <span>商品管理</span>
+                </a>
+            </li>
+            <li class="jiaoyi" data-tip="交易管理">
+                <a href="trade.html">
+                    <i class="nav-icon"></i>
+                    <span>交易管理</span>
+                </a>
+            </li>
+            <li class="account" data-tip="我的账户">
+                <a href="account-recharge1.html">
+                    <i class="nav-icon"></i>
+                    <span>我的账户</span>
+                </a>
+            </li>
+            <li class="xiajia" data-tip="管理下家">
+                <a href="my-partner1.html">
+                    <i class="nav-icon"></i>
+                    <span>管理下家</span>
+                </a>
+            </li>
+            <li class="safety" data-tip="安全管理">
+                <a href="safety-mima.html">
+                    <i class="nav-icon"></i>
+                    <span>安全管理</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main">
+        <!--商品管理导航-->
+        <div class="main-nav">
+            <h3>商品管理</h3>
+            <ul>
+                <li>
+                    <a href="publish-product1.html">发布商品</a>
+                </li>
+                <li class="active">
+                    <a href="#">出售中</a>
+                </li>
+                <li>
+                    <a href="soldout-product.html">已下架</a>
+                </li>
+                <li>
+                    <a href="product-classify.html">分类管理</a>
+                </li>
+            </ul>
+        </div>
+        <!--右侧主要内容-->
+        <div class="content">
+            <div class="relative">
+                <h3>出售中的商品</h3>
+                <!--商品名称查询-->
+                <form action="">
+                    <div class="search">
+                        <strong>商品名称 :</strong>
+                        <input type="text" name="productName" value=""/>
+                        <button type="button" class="find">查询</button>
+                    </div>
+                </form>
+                <!--出售中的商品列表-->
+                <div class="sale-product" id="sale-list">
+                    <table>
+                        <tbody class="table-head">
+                        <tr>
+                            <td class="col-1 shopname">
+                                发布时间 : <span>2016-09-01 11:40:05</span>
+                                店铺名称 : <a href="" class="store">店铺名称过长需隐藏后面的部分QERFGRG</a>
+                            </td>
+                            <td class="text-center">销量</td>
+                            <td colspan="4" style="padding-left:28px;">库存</td>
+                        </tr>
+                        </tbody>
+                        <tbody class="table-body">
+                        <tr>
+                            <td class="col-1">
+                                <div class="lf prophoto">
+                                    <a href="">
+                                        <img src="img/sale-product.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="lf proinfo">
+                                    <p class="proname">
+                                        <a href="">qiankou 新歌混色宽松套头毛歌混色宽松套头毛新歌混色宽松套头毛衣歌混色宽松套头</a>
+                                        <a href="">[交易快照]</a>
+                                    </p>
+                                    <p class="proprice">&yen;49.50/&yen;48.50</p>
+                                    <p class="prosize">尺码 : <span>M</span></p>
+                                </div>
+                            </td>
+                            <td class="text-center col-2">
+                                <div class="salenum">380</div>
+                            </td>
+                            <td class="text-center col-2">
+                                <div class="salestorage">600</div>
+                            </td>
+                            <td class="col-3"></td>
+                            <td class="text-center col-2">
+                                <div class="salestate">
+                                    <div>出售中</div>
+                                    <div>
+                                        <a href="#" class="salepro">线下售货</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">分享</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center col-2">
+                                <div class="saleedit">
+                                    <div>
+                                        <a href="#">编辑商品</a>
+                                    </div>
+                                    <div>
+                                        <a href="javascript:;" class="soldout-product">下架商品</a>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="deletePro delete-product">删除商品</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <tbody class="table-head">
+                        <tr>
+                            <td class="col-1 shopname">
+                                发布时间 : <span>2016-09-01 11:40:05</span>
+                                店铺名称 : <a href="" class="store">QERFGRG</a>
+                            </td>
+                            <td class="text-center">销量</td>
+                            <td colspan="4" style="padding-left:28px;">库存</td>
+                        </tr>
+                        </tbody>
+                        <tbody class="table-body">
+                        <tr>
+                            <td class="col-1">
+                                <div class="lf prophoto">
+                                    <a href="">
+                                        <img src="img/sale-product.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="lf proinfo">
+                                    <p class="proname">
+                                        <a href="">qiankou 新歌混色宽松套头毛衣</a>
+                                        <a href="">[交易快照]</a>
+                                    </p>
+                                    <p class="proprice">&yen;49.50/&yen;48.50</p>
+                                    <p class="prosize">尺码 : <span>M</span></p>
+                                </div>
+                            </td>
+                            <td class="text-center col-2">
+                                <div class="salenum">380</div>
+                            </td>
+                            <td class="text-center col-2">
+                                <div class="salestorage">600</div>
+                            </td>
+                            <td class="col-3"></td>
+                            <td class="text-center col-2">
+                                <div class="salestate">
+                                    <div>出售中</div>
+                                    <div>
+                                        <a href="#" class="salepro">线下售货</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">分享</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center col-2">
+                                <div class="saleedit">
+                                    <div>
+                                        <a href="#">编辑商品</a>
+                                    </div>
+                                    <div>
+                                        <a href="javascript:;" class="soldout-product">下架商品</a>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="deletePro delete-product">删除商品</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--线下销货的弹出框-->
+                <div class="offline" id="offline">
+                    <div class="close"></div>
+                    <div class="tit">
+                        <p class="lf">线下销货</p>
+                        <div class="rt">
+                            <img src="img/sale-product.jpg" alt=""/>
+                        </div>
+                    </div>
+                    <form action="" method="">
+                        <div class="select-type">
+                            <p>请选择型号</p>
+                            <div id="select-type">
+                                <span class="on">女款</span>
+                                <span>儿童款</span>
+                            </div>
+                        </div>
+                        <div class="sale-num">
+                            <p>销货数量（库存 : 220）</p>
+                            <input type="text" name="pro-num" value=""/>
+                        </div>
+                        <button type="button">确认销货</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--下架商品的弹出框-->
+    <div class="pop" id="soldoutPro">
+        <div class="container">
+            <p>你确定要下架此商品吗？</p>
+            <p class="btngroup">
+                <button class="confirm" type="button">确认</button>
+                <button class="cancel" type="button">取消</button>
+            </p>
+        </div>
+    </div>
+    <!--删除商品的弹出框-->
+    <div class="pop deletepop" id="deletePro">
+        <div class="container">
+            <p>你确定要删除此商品吗？<br/><span>(删除后无法恢复)</span></p>
+            <p class="btngroup">
+                <button class="confirm" type="button">确认</button>
+                <button class="cancel" type="button">取消</button>
+            </p>
+        </div>
+    </div>
+    <!--左侧导航鼠标悬停的提示框-->
+    <div class="aside-nav-hover">
+        <div class="triangle"></div>
+        <div class="nav-text"></div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function(){
+//            是否下架商品的弹出框
+            $('.soldout-product').click(function(){
+                $('#soldoutPro').css('display','block');
+                $('#soldoutPro .cancel').click(function(){
+                    $('#soldoutPro').css('display','none');
+                })
+                $('#soldoutPro .confirm').click(function(){
+                    //确认下架商品
+                })
+            });
+//            是否删除商品
+            var i=0;
+            $('.delete-product').click(function(){
+                i=$(this).parents('table').index();
+                $('#deletePro').css('display','block');
+            });
+            $('#deletePro .cancel').click(function(){
+                $('#deletePro').css('display','none');
+            });
+            $('#deletePro .confirm').click(function(){
+                $('#sale-list table:eq('+i+')').remove();
+                $('#deletePro').css('display','none');
+            });
+//            关闭弹出框
+            $('.close').click(function(){
+                $(this).parent().hide();
+            });
+//            线下销售的弹出框
+            $('.salepro').click(function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                var w=$(this).position().left;
+                var h=$(this).position().top;
+                $('#offline').css({'left':w-200,'top':h}).show();
+            });
+            $('#select-type').on('click','span',function(){
+                $(this).addClass('on').siblings().removeClass('on');
+            });
+            //点击obj之外的地方 obj消失
+            function disappear(obj){
+                $('body,html').click(function(e){
+                    if(e.target!=obj[0]){
+                        obj.hide();
+                    }
+                });
+                obj.click(function(e){
+                    e.stopPropagation();
+                });
+            }
+            disappear($('#offline'));
+        })
+    </script>
+</body>
+</html>

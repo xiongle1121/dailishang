@@ -1,0 +1,305 @@
+/********** content 最右侧内容 *****/
+.content{
+    position:absolute;
+    left:180px;
+    right:0;
+    top:0;
+    bottom:0;
+    padding-left:30px;
+    background-color:#fff;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+/*顶部带背景图的用户信息部分*/
+.userinfo{
+    height:110px;
+    padding-left:35px;
+    background:url(../img/account.jpg) no-repeat 0 -80px;
+    overflow:hidden;
+}
+.userinfo .userphoto{
+    width:86px;
+    height:86px;
+    margin-top:11px;
+    border-radius:50%;
+    border:1px solid #fff;
+}
+.userinfo .userphoto img{
+    width:100%;
+    height:100%;
+}
+.userinfo .usermsg{
+    color:#fff;
+    line-height:110px;
+    margin-left:15px;
+}
+.userinfo .usermsg p{
+    float:left;
+    margin-right:35px;
+}
+.userinfo .usermsg span{
+    padding:0 5px;
+}
+/*标题*/
+.drawcashtit{
+    white-space: nowrap;
+    height:52px;
+    line-height:52px;
+    font-size:18px;
+    font-weight:normal;
+    margin-right:30px;
+    border-bottom:2px solid #e1e1e1;
+}
+/********* 提现 提取余额到银行卡 页面样式 ********/
+.drawcash-content{
+    margin:10px auto 0;
+    width:310px;
+    height:290px;
+}
+p.text-right{
+    width:85px;
+    text-align:right;
+}
+.drawcash-content .balance{
+    height:15px;
+    margin-bottom:15px;
+}
+.drawcash-content .balance em{
+    padding:0 4px;
+    color:#EB483B;
+}
+.drawcash-content .card-content{
+    margin-bottom:15px;
+}
+.drawcash-content .card-content>div{
+    float:left;
+    margin-left:5px;
+    width:220px;
+}
+.drawcash-content .card-content p{
+    margin-top:11px;
+}
+.drawcash-content .cards>div{
+    margin-bottom:8px;
+}
+.drawcash-content .cards label{
+    display:inline-block;
+    padding:0 6px;
+    width:180px;
+    height:38px;
+    line-height:38px;
+    border:1px solid #e1e1e1;
+    border-radius:4px;
+    cursor:default;
+}
+.drawcash-content .cards input{
+    height:38px;
+    line-height:38px;
+    *vertical-align:top;
+}
+.drawcash-content input:checked+label{
+    border:1px solid #A7AC2C;
+}
+.drawcash-content .cards em,.bankcardinfo .cardmsg em{
+    padding-left:20px;
+    height:38px;
+    background:url(../img/bank.png) no-repeat 0 center;
+}
+.drawcash-content .cards b,.bankcardinfo .cardmsg b{
+    letter-spacing:-6px;
+    padding-right:6px;
+}
+.drawcash-content .money{
+    height:32px;
+    line-height:32px;
+    margin-top:10px;
+}
+.drawcash-content .money input{
+    width:138px;
+    padding-left:10px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #e1e1e1;
+    margin:0 10px 0 15px;
+}
+.drawcash-content button.next{
+    display:block;
+    width:86px;
+    text-align:center;
+    height:30px;
+    line-height:30px;
+    border-radius:5px;
+    color:#fff;
+    background-color:#38A6EB;
+    margin:40px 0 0 40px;
+}
+/*******  确认提现信息  页面样式  *******/
+/*银行卡信息框样式*/
+.drawcash-content2{
+    min-width:730px;
+}
+.bankcardinfo{
+    width:730px;
+    height:135px;
+    padding:50px 0;
+    background-color:#EBF2F9;
+    margin:15px auto 0;
+}
+.bankcardinfo>div{
+    width:290px;
+    height:135px;
+    margin:0 auto;
+}
+.bankcardinfo p.text-right{
+    margin-right:20px;
+}
+.bankcardinfo .cardmsg>div{
+    float:left;
+    width:185px;
+    height:55px;
+    margin-bottom:20px;
+}
+.bankcardinfo .cardmsg span{
+    display:block;
+    width:180px;
+    height:38px;
+    line-height:38px;
+    margin:0 0 0 -20px;
+}
+.bankcardinfo .cash{
+    margin-bottom:15px;
+    height:15px;
+    clear:both;
+}
+.bankcardinfo .cash span{
+    color:#EB4F38;
+    padding-right:5px;
+}
+.bankcardinfo .time{
+    height:25px;
+    line-height:25px;
+    clear:both;
+}
+.bankcardinfo .time .clock{
+    padding-left:35px;
+    height:25px;
+    background:url(../img/remaining.png) no-repeat 0 0;
+}
+.bankcardinfo .time span{
+    color:#EB4F38;
+}
+/*支付密码行 样式*/
+.drawcash-content2 .paypwd{
+    width:355px;
+    height:40px;
+    line-height:40px;
+    margin:20px auto 40px;
+}
+.drawcash-content2 .paypwd input{
+    width:182px;
+    padding-left:10px;
+    height:38px;
+    line-height:38px;
+    border:1px solid #e1e1e1;
+    border-radius:5px;
+    margin:0 8px;
+    *vertical-align:middle;
+}
+.drawcash-content2 a.blue{
+    color:#56abe4;
+}
+.drawcash-content2 .btn{
+    width:165px;
+    height:32px;
+    line-height:32px;
+    margin:0 auto;
+}
+.drawcash-content2 .btn button.sure{
+    width:86px;
+    height:32px;
+    text-align:center;
+    line-height:32px;
+    background-color:#EB4F38;
+    color:#fff;
+    border-radius:4px;
+    margin-right:15px;
+    *vertical-align:middle;
+}
+/*********   提现反馈  页面样式 **********/
+.feedback{
+    width:770px;
+    height:270px;
+    margin:20px auto 0;
+    border:1px solid #F0C298;
+}
+.feedback .feedbacktit{
+    height:95px;
+    background-color:#F1DCC9;
+    font-size:18px;
+}
+.feedback .feedbacktit i{
+    display:inline-block;
+    vertical-align:middle;
+    width:32px;
+    height:95px;
+    margin:0 30px 0 80px;
+    background:url(../img/waiting.png) no-repeat 0 center;
+}
+.feedback .feedback-content{
+    color:#666;
+}
+.feedback .feedback-content>p{
+    text-align:center;
+    margin:15px 0 25px;
+}
+.progressbar{
+    position:relative;
+    width:390px;
+    height:60px;
+    margin:0 auto;
+}
+.progressbar div.line{
+    position:absolute;
+    width:270px;
+    border-top:1px solid #32B16C;
+    left:60px;
+    top:28px;
+    z-index:888;
+}
+.progressbar .step1,.progressbar .step2,.progressbar .step3{
+    width:100px;
+    text-align:center;
+    position:relative;
+    z-index:999;
+}
+.progressbar .step1,.progressbar .step2{
+    margin-right:45px;
+}
+.progressbar p.progresstext{
+    color:#32B16C;
+}
+.progressbar span{
+    display:block;
+    width:20px;
+    height:20px;
+    border:1px solid #32B16C;
+    border-radius:50%;
+    margin:2px auto 5px;
+    background-color:#fff;
+}
+.progressbar span.active i{
+    display:block;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background-color:#32B16C;
+    margin:4px;
+}
+.feedback .link{
+    margin:25px 0 0 95px;
+}
+.feedback .link a{
+    color:#32B16C;
+    display:inline-block;
+    margin-right:30px;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>我的账户--充值失败</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/account-recharge.css" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="img/logo-white.png" alt=""/>
+        </a>
+        <button type="button" class="exit">退出</button>
+    </div>
+    <!--左侧导航-->
+    <div class="aside-nav" id="aside-nav">
+        <p class="menubtn" id="menubtn">
+            <i class="caidan"></i><!--<img src="img/caidan.png" alt=""/>-->
+        </p>
+        <ul class="menu" id="aside-menu">
+            <li class="shangpin" data-tip="商品管理">
+                <a href="publish-product1.html">
+                    <i class="nav-icon"></i>
+                    <span>商品管理</span>
+                </a>
+            </li>
+            <li class="jiaoyi" data-tip="交易管理">
+                <a href="trade.html">
+                    <i class="nav-icon"></i>
+                    <span>交易管理</span>
+                </a>
+            </li>
+            <li class="account active" data-tip="我的账户">
+                <a href="#">
+                    <i class="nav-icon"></i>
+                    <span>我的账户</span>
+                </a>
+            </li>
+            <li class="xiajia" data-tip="管理下家">
+                <a href="my-partner1.html">
+                    <i class="nav-icon"></i>
+                    <span>管理下家</span>
+                </a>
+            </li>
+            <li class="safety" data-tip="安全管理">
+                <a href="safety-mima.html">
+                    <i class="nav-icon"></i>
+                    <span>安全管理</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main">
+        <!--我的账户导航-->
+        <div class="main-nav">
+            <h3>我的账户</h3>
+            <ul>
+                <li class="active">
+                    <a href="publish-product1.html">充值</a>
+                </li>
+                <li>
+                    <a href="sale.html">提现</a>
+                </li>
+                <li>
+                    <a href="soldout-product.html">银行卡</a>
+                </li>
+                <li>
+                    <a href="">账单明细</a>
+                </li>
+            </ul>
+        </div>
+        <!--右侧主要内容-->
+        <div class="content">
+            <!--带背景图的用户信息部分-->
+            <div class="userinfo">
+                <div class="lf userphoto">
+                    <img src="img/user_photo.png" alt=""/>
+                </div>
+                <div class="lf usermsg">
+                    <p>账户余额 :<span>0.00</span>元</p>
+                    <p>银行卡 :<span>2</span>张</p>
+                </div>
+            </div>
+            <h4 class="rechargetit">充值</h4>
+            <div class="recharge-fail">
+                <p><i></i>充值失败</p>
+                <div>无法完成充值<br/><span>此银行卡余额不足，请选择<a href="#">其他方式</a>充值</span></div>
+            </div>
+        </div>
+    </div>
+    <!--左侧导航鼠标悬停的提示框-->
+    <div class="aside-nav-hover">
+        <div class="triangle"></div>
+        <div class="nav-text"></div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>

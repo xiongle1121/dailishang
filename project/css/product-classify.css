@@ -1,0 +1,184 @@
+/********** content 最右侧内容 *****/
+.content{
+    position:absolute;
+    left:180px;
+    right:0;
+    top:0;
+    bottom:0;
+    padding:0 20px;
+    background-color:#fff;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.content h3{
+    white-space:nowrap;
+    height:53px;
+    line-height:53px;
+    padding-left:15px;
+    font-size:18px;
+    font-weight:normal;
+    border-bottom:1px solid #e1e1e1;
+}
+.content h3 button.addnew{
+    width:120px;
+    text-align:center;
+    height:30px;
+    line-height:30px;
+    vertical-align:middle;
+    background-color:#FF5555;
+    color:#fff;
+    border-radius:5px;
+    margin-left:25px;
+}
+/*分类列表 classify-list 样式*/
+.classify-list{
+    margin-top:20px;
+}
+.classify-list table,.order-table table{
+    border:1px solid #e1e1e1;
+    width:824px;
+}
+.classify-list table th,.classify-list table td,.order-table table th,.order-table table td{
+    height:40px;
+    line-height:40px;
+    padding-left:20px;
+    border-right:1px solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
+}
+.col-1{
+    width:72px;
+}
+.col-2{
+    width:380px;
+}
+.classify-list table thead,.order-table table thead{
+    background-color:#F4F5FA;
+}
+.classify-list thead th,.order-table thead th{
+    text-align:left;
+    font-weight:normal;
+}
+.classify-list tbody .order>div{
+    width:20px;
+    height:20px;
+    text-align:center;
+    line-height:20px;
+    color:#fff;
+    border-radius:50%;
+    background-color:#FF5555;
+}
+.addpro,.deletepro,.removepro{
+    color:#56abe4;
+    font-size:12px;
+    vertical-align:middle;
+}
+button.deletepro{
+    padding-left:15px;
+}
+/*******    衣服分类 页面样式   *******/
+/*** 全部 已加入 样式 ***/
+.content.classifyContent h3{
+    border-bottom:none;
+}
+ul.all-select{
+    width:824px;
+    height:40px;
+    margin-bottom:20px;
+    border-bottom:1px solid #e1e1e1;
+}
+ul.all-select li{
+    float:left;
+    padding:0 15px;
+    height:40px;
+    line-height:40px;
+    cursor:pointer;
+}
+ul.all-select li.active{
+    border-bottom:1px solid #ff5555;
+}
+ul.all-select li span{
+    display:inline-block;
+    width:20px;
+    text-align:center;
+    height:20px;
+    line-height:20px;
+    margin-left:5px;
+    border-radius:50%;
+    background-color:#FF5555;
+    color:#fff;
+}
+/*商品名称 样式*/
+.protit{
+    width:270px;
+}
+.protit input{
+    padding-left:10px;
+    width:186px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #e1e1e1;
+    margin-left:10px;
+    *vertical-align:middle;
+}
+/*排序方式 样式*/
+.orderway{
+    margin:15px 0;
+    height:32px;
+    min-width:400px;
+}
+.orderway p{
+    float:left;
+    margin-right:10px;
+    height:32px;
+    line-height:32px;
+}
+.orderway .order-content{
+    float:left;
+}
+.orderway .order-content li{
+    float:left;
+    padding-left:8px;
+    width:74px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #e1e1e1;
+    border-right:none;
+    cursor:pointer;
+}
+.orderway .order-content li.last{
+    border-right:1px solid #e1e1e1;
+}
+.orderway .order-content span.arrow{
+    color:#d1d1d1;
+    margin:5px 8px 0 0;
+    height:20px;
+    line-height:10px;
+}
+/*商品分类列表 样式*/
+.order-table{
+    width:824px;
+}
+.order-table tbody td{
+    height:55px;
+    width:50%;
+}
+.order-table .prophoto{
+    float:left;
+    width:38px;
+    height:38px;
+    margin-right:10px;
+}
+.order-table .prophoto img{
+    max-width:100%;
+    border-radius:4px;
+}
+.order-table .proinfo{
+    float:left;
+    width:325px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.order-table .proinfo a:hover{
+    color:#EB4F38;
+}

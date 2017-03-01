@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>交易管理----订单管理</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/trade.css" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="img/logo-white.png" alt=""/>
+        </a>
+        <button type="button" class="exit">退出</button>
+    </div>
+    <!--左侧导航-->
+    <div class="aside-nav" id="aside-nav">
+        <p class="menubtn" id="menubtn">
+            <i class="caidan"></i><!--<img src="img/caidan.png" alt=""/>-->
+        </p>
+        <ul class="menu" id="aside-menu">
+            <li class="shangpin" data-tip="商品管理">
+                <a href="publish-product1.html">
+                    <i class="nav-icon"></i>
+                    <span>商品管理</span>
+                </a>
+            </li>
+            <li class="jiaoyi active" data-tip="交易管理">
+                <a href="#">
+                    <i class="nav-icon"></i>
+                    <span>交易管理</span>
+                </a>
+            </li>
+            <li class="account" data-tip="我的账户">
+                <a href="account-recharge1.html">
+                    <i class="nav-icon"></i>
+                    <span>我的账户</span>
+                </a>
+            </li>
+            <li class="xiajia" data-tip="管理下家">
+                <a href="my-partner1.html">
+                    <i class="nav-icon"></i>
+                    <span>管理下家</span>
+                </a>
+            </li>
+            <li class="safety" data-tip="安全管理">
+                <a href="safety-mima.html">
+                    <i class="nav-icon"></i>
+                    <span>安全管理</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main">
+        <!--商品管理导航-->
+        <div class="main-nav">
+            <h3>交易管理</h3>
+            <ul>
+                <li class="active">
+                    <a href="#">订单管理</a>
+                </li>
+            </ul>
+        </div>
+        <!--右侧主要内容-->
+        <div class="content">
+            <div class="relative">
+                <h3>订单管理</h3>
+                <div class="more-part">
+                    <form action="" method="">
+                        <div class="row">
+                            <div class="select-container">
+                                <span class="select-tit">订单状态 :</span>
+                                <span class="select-range" id="select-condition">
+                                    <span class="lf">全部</span>
+                                    <span class="select-arrow"></span>
+                                </span>
+                                <ul class="select-pop">
+                                    <li>全部</li>
+                                    <li>等待买家付款</li>
+                                    <li>买家已付款</li>
+                                    <li>卖家已发货</li>
+                                    <li>买家预约中</li>
+                                    <li>交易完成</li>
+                                    <li>交易关闭</li>
+                                </ul>
+                            </div>
+                            <div class="select-container">
+                                <span class="select-tit">成交排序 :</span>
+                                <span class="select-range" id="select-sort">
+                                    <span class="lf">创建时间</span>
+                                    <span class="select-arrow"></span>
+                                </span>
+                                <ul class="select-pop">
+                                    <li>创建时间</li>
+                                    <li>店铺</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="select-tit">订单编号 :</span>
+                                <input type="text" name="ordernum" value=""/>
+                            </div>
+                            <div>
+                                <span class="select-tit">手机号码 :</span>
+                                <input type="text" name="phonenum" value=""/>
+                            </div>
+                            <div>
+                                <span class="select-tit">收件人 :</span>
+                                <input type="text" name="addressee" value=""/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <span class="select-tit">商品名称 :</span>
+                                <input type="text" name="proname" value=""/>
+                            </div>
+                            <div>
+                                <span class="select-tit">快递单号 :</span>
+                                <input type="text" name="expressnum" value=""/>
+                            </div>
+                            <div>
+                                <span class="select-tit">用户昵称 :</span>
+                                <input type="text" name="petname" value=""/>
+                            </div>
+                        </div>
+                        <button type="button" class="check">查询</button>
+                    </form>
+                </div>
+                <!--筛选条件行-->
+                <ul class="filter-options" id="filter-options">
+                    <li class="firstli active">
+                        <span data-show="0">全部</span>
+                    </li>
+                    <li>
+                        <span data-show="1">等待付款（<em id="step1"></em>）</span>
+                    </li>
+                    <li>
+                        <span data-show="2">等待发货（<em id="step2"></em>）</span>
+                    </li>
+                    <li>
+                        <span data-show="3">已发货（<em id="step3"></em>）</span>
+                    </li>
+                    <li>
+                        <span data-show="4">预约中（<em id="step4"></em>）</span>
+                    </li>
+                    <li>
+                        <span data-show="5">交易成功（<em id="step5"></em>）</span>
+                    </li>
+                    <li>
+                        <span data-show="6">交易关闭（<em id="step6"></em>）</span>
+                    </li>
+                </ul>
+                <!--订单详情列表-->
+                <div class="order-list" id="order-list">
+                    <div class="order">
+                        <table>
+                            <tbody class="order-head">
+                                <tr>
+                                    <td colspan="3" class="order-tit">
+                                        <p class="lf first">
+                                            订单编号 :
+                                            <span>12345678965412</span>
+                                        </p>
+                                        <p class="lf">
+                                            创建时间 :
+                                            <span>2016-09-06 11:40:40</span>
+                                        </p>
+                                        <p class="lf">
+                                            店铺名称 :
+                                            <a href="#" class="store">JIANYUE</a>
+                                        </p>
+                                    </td>
+                                    <td colspan="3" class="text-right">
+                                        <button type="button" class="concat"><i class="seller"></i>联系卖家</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody class="order-body">
+                                <tr>
+                                    <td width="30%">
+                                        <div>
+                                            <div class="lf proimg">
+                                                <a href="">
+                                                    <img src="img/sale-product.jpg" alt=""/>
+                                                </a>
+                                            </div>
+                                            <div class="lf proname">
+                                                <p>
+                                                    <a href="">qiankou 新款混色宽松套头毛衣新款混色宽松套头毛衣</a>
+                                                    <a href="">[交易快照]</a>
+                                                </p>
+                                                <p>尺码 : M</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td width="10%">
+                                        <div class="text-center">
+                                            <s>99.9</s><br/>
+                                            <strong class="black">49.50</strong>
+                                        </div>
+                                    </td>
+                                    <td width="28%">
+                                        <div class="black">
+                                            1
+                                        </div>
+                                    </td>
+                                    <td width="10%" class="border-left">
+                                        <div class="text-center">
+                                            &yen;49.50<br/>（包邮）
+                                        </div>
+                                    </td>
+                                    <td width="10%" class="border-left">
+                                        <div class="text-center gap">
+                                            <p class="order-filter" data-deal="1">等待买家付款</p>
+                                            <p>
+                                                <a href="#" class="blue">订单详情</a>
+                                            </p>
+                                        </div>
+                                    </td>
+                                    <td width="12%" class="border-left">
+                                        <div class="text-center gap">
+                                            <p>
+                                                <a href="#" class="red">拒绝请求</a>
+                                            </p>
+                                            <p>
+                                                <a href="" class="blue">同意请求</a>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="order">
+                        <table>
+                            <tbody class="order-head">
+                            <tr>
+                                <td colspan="3" class="order-tit">
+                                    <p class="lf first">
+                                        订单编号 :
+                                        <span>12345678965412</span>
+                                    </p>
+                                    <p class="lf">
+                                        创建时间 :
+                                        <span>2016-09-06 11:40:40</span>
+                                    </p>
+                                    <p class="lf">
+                                        店铺名称 :
+                                        <a href="#" class="store">JIANYUE</a>
+                                    </p>
+                                </td>
+                                <td colspan="3" class="text-right">
+                                    <button type="button" class="concat"><i class="seller"></i>联系卖家</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody class="order-body">
+                            <tr>
+                                <td width="30%">
+                                    <div>
+                                        <div class="lf proimg">
+                                            <a href="">
+                                                <img src="img/sale-product.jpg" alt=""/>
+                                            </a>
+                                        </div>
+                                        <div class="lf proname">
+                                            <p>
+                                                <a href="">qiankou 新款混色宽松套头毛衣</a>
+                                                <a href="">[交易快照]</a>
+                                            </p>
+                                            <p>尺码 : M</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="10%">
+                                    <div class="text-center">
+                                        <s>99.9</s><br/>
+                                        <strong class="black">49.50</strong>
+                                    </div>
+                                </td>
+                                <td width="28%">
+                                    <div class="black">
+                                        1
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center">
+                                        &yen;49.50<br/>（包邮）
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p class="order-filter" data-deal="2">买家已付款</p>
+                                        <p>
+                                            <a href="#" class="blue">订单详情</a>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td width="12%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p>
+                                            <a href="#" class="red deliverbtn">去发货</a>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="order">
+                        <table>
+                            <tbody class="order-head">
+                            <tr>
+                                <td colspan="3" class="order-tit">
+                                    <p class="lf first">
+                                        订单编号 :
+                                        <span>12345678965412</span>
+                                    </p>
+                                    <p class="lf">
+                                        创建时间 :
+                                        <span>2016-09-06 11:40:40</span>
+                                    </p>
+                                    <p class="lf">
+                                        店铺名称 :
+                                        <a href="#" class="store">JIANYUE</a>
+                                    </p>
+                                </td>
+                                <td colspan="3" class="text-right">
+                                    <button type="button" class="concat"><i class="seller"></i>联系卖家</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody class="order-body">
+                            <tr>
+                                <td width="30%">
+                                    <div>
+                                        <div class="lf proimg">
+                                            <a href="">
+                                                <img src="img/sale-product.jpg" alt=""/>
+                                            </a>
+                                        </div>
+                                        <div class="lf proname">
+                                            <p>
+                                                <a href="">qiankou 新款混色宽松套头毛衣</a>
+                                                <a href="">[交易快照]</a>
+                                            </p>
+                                            <p>尺码 : M</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="10%">
+                                    <div class="text-center">
+                                        <s>99.9</s><br/>
+                                        <strong class="black">49.50</strong>
+                                    </div>
+                                </td>
+                                <td width="28%">
+                                    <div class="black">
+                                        1
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center">
+                                        &yen;49.50<br/>（包邮）
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p class="order-filter" data-deal="3">卖家已发货</p>
+                                        <p>
+                                            <a href="#" class="blue">订单详情</a>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td width="12%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p>
+                                            <a href="#" class="red">查看物流</a>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="order">
+                        <table>
+                            <tbody class="order-head">
+                            <tr>
+                                <td colspan="3" class="order-tit">
+                                    <p class="lf first">
+                                        订单编号 :
+                                        <span>12345678965412</span>
+                                    </p>
+                                    <p class="lf">
+                                        创建时间 :
+                                        <span>2016-09-06 11:40:40</span>
+                                    </p>
+                                    <p class="lf">
+                                        店铺名称 :
+                                        <a href="#" class="store">JIANYUE</a>
+                                    </p>
+                                </td>
+                                <td colspan="3" class="text-right">
+                                    <button type="button" class="concat"><i class="seller"></i>联系卖家</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody class="order-body">
+                            <tr>
+                                <td width="30%">
+                                    <div>
+                                        <div class="clear">
+                                            <div class="lf proimg">
+                                                <a href="">
+                                                    <img src="img/sale-product.jpg" alt=""/>
+                                                </a>
+                                            </div>
+                                            <div class="lf proname">
+                                                <p>
+                                                    <a href="">qiankou 新款混色宽松套头毛衣</a>
+                                                    <a href="">[交易快照]</a>
+                                                </p>
+                                                <p>尺码 : M</p>
+                                            </div>
+                                        </div>
+                                        <div class="deadline red">
+                                            <i class="_d">02</i>天
+                                            <span class="_h">23</span><em>:</em>
+                                            <span class="_m">52</span><em>:</em>
+                                            <span class="_s">42</span>
+                                            后结束预约
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="10%">
+                                    <div class="text-center">
+                                        <s>99.9</s><br/>
+                                        <strong class="black">49.50</strong>
+                                    </div>
+                                </td>
+                                <td width="28%">
+                                    <div class="black">
+                                        1
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center">
+                                        &yen;49.50<br/>（包邮）
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p class="order-filter" data-deal="4">买家预约中</p>
+                                        <p>
+                                            <a href="#" class="blue">订单详情</a>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td width="12%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p>
+                                            <a href="#" class="red">查看物流</a>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="order">
+                        <table>
+                            <tbody class="order-head">
+                            <tr>
+                                <td colspan="3" class="order-tit">
+                                    <p class="lf first">
+                                        订单编号 :
+                                        <span>12345678965412</span>
+                                    </p>
+                                    <p class="lf">
+                                        创建时间 :
+                                        <span>2016-09-06 11:40:40</span>
+                                    </p>
+                                    <p class="lf">
+                                        店铺名称 :
+                                        <a href="#" class="store">JIANYUE</a>
+                                    </p>
+                                </td>
+                                <td colspan="3" class="text-right">
+                                    <button type="button" class="concat"><i class="seller"></i>联系卖家</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody class="order-body">
+                            <tr>
+                                <td width="30%">
+                                    <div>
+                                        <div class="lf proimg">
+                                            <a href="">
+                                                <img src="img/sale-product.jpg" alt=""/>
+                                            </a>
+                                        </div>
+                                        <div class="lf proname">
+                                            <p>
+                                                <a href="">qiankou 新款混色宽松套头毛衣</a>
+                                                <a href="">[交易快照]</a>
+                                            </p>
+                                            <p>尺码 : M</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="10%">
+                                    <div class="text-center">
+                                        <s>99.9</s><br/>
+                                        <strong class="black">49.50</strong>
+                                    </div>
+                                </td>
+                                <td width="28%">
+                                    <div class="black">
+                                        1
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center">
+                                        &yen;49.50<br/>（包邮）
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p class="order-filter" data-deal="5">交易完成</p>
+                                        <p>
+                                            <a href="#" class="blue">订单详情</a>
+                                        </p>
+                                        <p>
+                                            <a href="#" class="blue">物流信息</a>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td width="12%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p>
+                                            <button type="button" class="red deletebtn">删除订单</button>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="order">
+                        <table>
+                            <tbody class="order-head">
+                            <tr>
+                                <td colspan="3" class="order-tit">
+                                    <p class="lf first">
+                                        订单编号 :
+                                        <span>12345678965412</span>
+                                    </p>
+                                    <p class="lf">
+                                        创建时间 :
+                                        <span>2016-09-06 11:40:40</span>
+                                    </p>
+                                    <p class="lf">
+                                        店铺名称 :
+                                        <a href="#" class="store">JIANYUE</a>
+                                    </p>
+                                </td>
+                                <td colspan="3" class="text-right">
+                                    <button type="button" class="concat"><i class="seller"></i>联系卖家</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody class="order-body">
+                            <tr>
+                                <td width="30%">
+                                    <div>
+                                        <div class="lf proimg">
+                                            <a href="">
+                                                <img src="img/sale-product.jpg" alt=""/>
+                                            </a>
+                                        </div>
+                                        <div class="lf proname">
+                                            <p>
+                                                <a href="">qiankou 新款混色宽松套头毛衣</a>
+                                                <a href="">[交易快照]</a>
+                                            </p>
+                                            <p>尺码 : M</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="10%">
+                                    <div class="text-center">
+                                        <s>99.9</s><br/>
+                                        <strong class="black">49.50</strong>
+                                    </div>
+                                </td>
+                                <td width="28%">
+                                    <div class="black">
+                                        1
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center">
+                                        &yen;49.50<br/>（包邮）
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p class="order-filter" data-deal="2">买家已付款</p>
+                                        <p>
+                                            <a href="#" class="blue">订单详情</a>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td width="12%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p>
+                                            <a href="#" class="red deliverbtn">去发货</a>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="order">
+                        <table>
+                            <tbody class="order-head">
+                            <tr>
+                                <td colspan="3" class="order-tit">
+                                    <p class="lf first">
+                                        订单编号 :
+                                        <span>12345678965412</span>
+                                    </p>
+                                    <p class="lf">
+                                        创建时间 :
+                                        <span>2016-09-06 11:40:40</span>
+                                    </p>
+                                    <p class="lf">
+                                        店铺名称 :
+                                        <a href="#" class="store">JIANYUE</a>
+                                    </p>
+                                </td>
+                                <td colspan="3" class="text-right">
+                                    <button type="button" class="concat"><i class="seller"></i>联系卖家</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody class="order-body">
+                            <tr>
+                                <td width="30%">
+                                    <div>
+                                        <div class="lf proimg">
+                                            <a href="">
+                                                <img src="img/sale-product.jpg" alt=""/>
+                                            </a>
+                                        </div>
+                                        <div class="lf proname">
+                                            <p>
+                                                <a href="">qiankou 新款混色宽松套头毛衣</a>
+                                                <a href="">[交易快照]</a>
+                                            </p>
+                                            <p>尺码 : M</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="10%">
+                                    <div class="text-center">
+                                        <s>99.9</s><br/>
+                                        <strong class="black">49.50</strong>
+                                    </div>
+                                </td>
+                                <td width="28%">
+                                    <div class="black">
+                                        1
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center">
+                                        &yen;49.50<br/>（包邮）
+                                    </div>
+                                </td>
+                                <td width="10%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p class="order-filter" data-deal="6">交易关闭</p>
+                                        <p>
+                                            <a href="#" class="blue">订单详情</a>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td width="12%" class="border-left">
+                                    <div class="text-center gap">
+                                        <p>
+                                            <button type="button" class="red deletebtn">删除订单</button>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--去发货的弹出框-->
+                <div class="deliver" id="deliver">
+                    <div class="close"></div>
+                    <form action="" method="">
+                        <div class="deliver-way">
+                            <p>发货方式</p>
+                            <div class="clear" id="deliver-way">
+                        <span class="lf on">
+                            快递
+                            <em><i class="circle"></i></em>
+                        </span>
+                        <span class="rt">
+                            无需快递
+                            <em><i class="circle"></i></em>
+                        </span>
+                            </div>
+                        </div>
+                        <div class="logistic">
+                            <p>物流填写</p>
+                            <input type="text" name="logistic" value=""/>
+                            <div class="parent">
+                        <span class="select-logistic">
+                            <span class="lf">选择物流公司</span>
+                            <span class="select-arrow"></span>
+                        </span>
+                                <ul class="company">
+                                    <li>顺丰快递</li>
+                                    <li>EMS邮政</li>
+                                    <li>圆通速递</li>
+                                    <li>申通速递</li>
+                                    <li>韵达速递</li>
+                                    <li>中通速递</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button type="button" id="sure-deliver">确认发货</button>
+                    </form>
+                </div>
+                <!--发货成功的弹出框-->
+                <div id="deliver-success" class="deliver-success">
+                    <div class="close"></div>
+                    <p><i></i>发货成功</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--删除订单的弹出框-->
+    <div class="pop" id="delete-order">
+        <div class="container">
+            <p>你确定要删除这笔订单吗？</p>
+            <p class="btngroup">
+                <button class="confirm" type="button">确认</button>
+                <button class="cancel" type="button">取消</button>
+            </p>
+        </div>
+    </div>
+    <!--左侧导航鼠标悬停的提示框-->
+    <div class="aside-nav-hover">
+        <div class="triangle"></div>
+        <div class="nav-text"></div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function(){
+//            筛选条件的点击效果
+            function _totNum(){
+                var num=[];
+                var step1=0,step2=0,step3=0,step4=0,step5=0,step6=0;
+                $('.order-filter').each(function(index,dom){
+                    num.push($(this).attr('data-deal'));
+                });
+                for(var i=0;i<num.length;i++){
+                    switch (num[i]) {
+                        case '1':step1++;
+                            break;
+                        case '2':step2++;
+                            break;
+                        case '3':step3++;
+                            break;
+                        case '4':step4++;
+                            break;
+                        case '5':step5++;
+                            break;
+                        case '6':step6++;
+                            break;
+                    }
+                }
+                $('#step1').html(step1);
+                $('#step2').html(step2);
+                $('#step3').html(step3);
+                $('#step4').html(step4);
+                $('#step5').html(step5);
+                $('#step6').html(step6);
+            }
+            _totNum();
+            $('#filter-options').on('click','span',function(){
+                $(this).parent().addClass('active').siblings().removeClass('active');
+                var text=$(this).attr('data-show');
+                $('.order-filter').each(function(index,ele){
+                    if(text==0){
+                        $('.order').show();
+                    }else{
+                        if($(this).attr('data-deal')==text){
+                            $(this).parents('.order').show();
+                        }else{
+                            $(this).parents('.order').hide();
+                        }
+                    }
+                });
+            });
+//            是否删除商品
+            !function(){
+                var i=0;
+                $('.deletebtn').click(function(){
+                    i=$(this).parents('.order').index();
+                    $('#delete-order').css('display','block');
+                });
+                $('#delete-order .cancel').click(function(){
+                    $('#delete-order').css('display','none');
+                });
+                $('#delete-order .confirm').click(function(){
+                    $('#order-list .order:eq('+i+')').remove();
+                    $('#delete-order').css('display','none');
+                    _totNum();
+                });
+            }();
+//            订单状态、成交排序的点击效果
+            function pop(obj){
+                $(obj).click(function(e){
+                    var $div=$(this).siblings('ul');
+                    $div.toggle();
+                    $(this).children('.select-arrow').toggleClass('select-arrowup');
+                    $('body,html').click(function(e){
+                        if(e.target!=$div[0]){
+                            $div.hide();
+                            $(obj).children('.select-arrow').removeClass('select-arrowup');
+                        }
+                    });
+                    e.stopPropagation();
+                    $div.click(function(e){
+                        e.stopPropagation();
+                    });
+                    $div.children('li').click(function(){
+                        $(this).parent().hide();
+                        $(obj).children('.select-arrow').removeClass('select-arrowup');
+                        $(obj).children('.lf').text($(this).text());
+                    });
+                })
+            }
+            //订单状态
+            pop('#select-condition');
+            //成交排序
+            pop('#select-sort');
+            //去发货弹出框 选择物流
+            pop('.select-logistic');
+//            关闭弹出框
+            $('.close').click(function(){
+                $(this).parent().hide();
+            });
+//            点击obj之外的地方 obj消失
+            function disappear(obj){
+                $('body,html').click(function(e){
+                    if(e.target!=obj[0]){
+                        obj.hide();
+                    }
+                });
+                obj.click(function(e){
+                    e.stopPropagation();
+                });
+            }
+            disappear($('#deliver'));
+            disappear($('#deliver-success'));
+//            去发货的弹出框
+            $('.deliverbtn').click(function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                var w=$(this).position().left;
+                var h=$(this).position().top;
+                $('#deliver').css({'left':w-200,'top':h}).show();
+                $('#deliver-success').css({'left':w-200,'top':h});
+            });
+//            快递、无需快递的选择
+            $('#deliver-way').on('click','span',function(){
+                $(this).addClass('on').siblings().removeClass('on');
+            });
+//            发货成功
+            $('#sure-deliver').click(function(){
+                $('#deliver').hide();
+                $('#deliver-success').show();
+            });
+//            买家预约倒计时
+            function _fresh(){
+                var leftsecond = parseInt(((new Date("october 20, 2016 20:00:00")).getTime() - (new Date()).getTime()) / 1000);
+                leftsecond<0&&(leftsecond=0);
+                var __d=parseInt(leftsecond/86400),__h = parseInt((leftsecond / 3600) % 24),__m = parseInt((leftsecond / 60) % 60),__s = parseInt(leftsecond % 60);
+                __d<10&&(__d='0'+__d);
+                __h<10&&(__h='0'+__h);
+                __m<10&&(__m='0'+__m);
+                __s<10&&(__s='0'+__s);
+                $('._d').html(' '+__d);
+                $('._h').html(' '+__h);
+                $('._m').html(' '+__m);
+                $('._s').html(' '+__s);
+            }
+            _fresh();
+            setInterval(_fresh,1000);
+        })
+    </script>
+</body>
+</html>

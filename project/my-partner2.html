@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>管理下家----我的下家之交易明细</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/my-partner.css" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="img/logo-white.png" alt=""/>
+        </a>
+        <button type="button" class="exit">退出</button>
+    </div>
+    <!--左侧导航-->
+    <div class="aside-nav" id="aside-nav">
+        <p class="menubtn" id="menubtn">
+            <i class="caidan"></i><!--<img src="img/caidan.png" alt=""/>-->
+        </p>
+        <ul class="menu" id="aside-menu">
+            <li class="shangpin" data-tip="商品管理">
+                <a href="publish-product1.html">
+                    <i class="nav-icon"></i>
+                    <span>商品管理</span>
+                </a>
+            </li>
+            <li class="jiaoyi" data-tip="交易管理">
+                <a href="trade.html">
+                    <i class="nav-icon"></i>
+                    <span>交易管理</span>
+                </a>
+            </li>
+            <li class="account" data-tip="我的账户">
+                <a href="account-recharge1.html">
+                    <i class="nav-icon"></i>
+                    <span>我的账户</span>
+                </a>
+            </li>
+            <li class="xiajia active" data-tip="管理下家">
+                <a href="#">
+                    <i class="nav-icon"></i>
+                    <span>管理下家</span>
+                </a>
+            </li>
+            <li class="safety" data-tip="安全管理">
+                <a href="safety-mima.html">
+                    <i class="nav-icon"></i>
+                    <span>安全管理</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main">
+        <!--管理下家导航-->
+        <div class="main-nav">
+            <h3>管理下家</h3>
+            <ul>
+                <li>
+                    <a href="my-partner-invite.html">邀请</a>
+                </li>
+                <li class="active">
+                    <a href="#">我的下家</a>
+                </li>
+            </ul>
+        </div>
+        <!--右侧主要内容-->
+        <div class="content">
+            <h3>交易明细</h3>
+            <div class="trade-container">
+                <form action="">
+                    <div class="search">
+                        <span>时间 :</span>
+                        <input class="laydate-icon" type="text" name="startTime" id="start" value=""/>
+                        <em>-</em>
+                        <input class="laydate-icon" type="text" name="endTime" id="end" value=""/>
+                        <button type="button">查询</button>
+                    </div>
+                </form>
+                <div class="summary">
+                    <strong>交易次数:<em>2</em>次</strong>
+                    <strong>总交易额(元):<em>500</em>元</strong>
+                </div>
+                <table class="tradedetails-table">
+                    <thead>
+                        <tr>
+                            <th width="5%">分类</th>
+                            <th width="24%">创建时间</th>
+                            <th width="12%">名称</th>
+                            <th>
+                                <div class="text-right">
+                                    金额
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <div class="classifyPic">
+                                    <img src="img/shop-car.png" alt=""/>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <p>星期一</p>
+                                <p class="gray">2016-9-26</p>
+                            </td>
+                            <td >
+                                <div class="proname">
+                                    <p>
+                                        <a href="#">zippo打火机 Zippo正版 原装进口Zippo</a>
+                                    </p>
+                                    <p class="gray">
+                                        <a href="#" class="gray">余文乐工作室</a>
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="gray text-right">
+                                    +10000.00
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="classifyPic">
+                                    <img src="img/shop-car.png" alt=""/>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <p>星期一</p>
+                                <p class="gray">2016-9-26</p>
+                            </td>
+                            <td >
+                                <div class="proname">
+                                    <p>
+                                        <a href="#">zippo打火机 Zippo正版 原装进口Zippo</a>
+                                    </p>
+                                    <p class="gray">
+                                        <a href="#" class="gray">余文乐工作室</a>
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="gray text-right">
+                                    +10000.00
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--左侧导航鼠标悬停的提示框-->
+    <div class="aside-nav-hover">
+        <div class="triangle"></div>
+        <div class="nav-text"></div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="laydate/laydate.js"></script>
+    <script>
+        //        日期选择插件
+        var start = {
+            elem: '#start',
+            format: 'YYYY.MM.DD',
+            istime: false,
+            istoday: false,
+            isclear:true,
+            event:'focus',
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#end',
+            format: 'YYYY.MM.DD',
+            istime: false,
+            istoday: true,
+            isclear:true,
+            event:'focus',
+            choose: function(datas){
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+    </script>
+</body>
+</html>

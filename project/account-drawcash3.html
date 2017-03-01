@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>我的账户--提现step2</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/account-drawcash.css" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="img/logo-white.png" alt=""/>
+        </a>
+        <button type="button" class="exit">退出</button>
+    </div>
+    <!--左侧导航-->
+    <div class="aside-nav" id="aside-nav">
+        <p class="menubtn" id="menubtn">
+            <i class="caidan"></i><!--<img src="img/caidan.png" alt=""/>-->
+        </p>
+        <ul class="menu" id="aside-menu">
+            <li class="shangpin" data-tip="商品管理">
+                <a href="publish-product1.html">
+                    <i class="nav-icon"></i>
+                    <span>商品管理</span>
+                </a>
+            </li>
+            <li class="jiaoyi" data-tip="交易管理">
+                <a href="trade.html">
+                    <i class="nav-icon"></i>
+                    <span>交易管理</span>
+                </a>
+            </li>
+            <li class="account active" data-tip="我的账户">
+                <a href="#">
+                    <i class="nav-icon"></i>
+                    <span>我的账户</span>
+                </a>
+            </li>
+            <li class="xiajia" data-tip="管理下家">
+                <a href="my-partner1.html">
+                    <i class="nav-icon"></i>
+                    <span>管理下家</span>
+                </a>
+            </li>
+            <li class="safety" data-tip="安全管理">
+                <a href="safety-mima.html">
+                    <i class="nav-icon"></i>
+                    <span>安全管理</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main">
+        <!--我的账户导航-->
+        <div class="main-nav">
+            <h3>我的账户</h3>
+            <ul>
+                <li>
+                    <a href="account-recharge1.html">充值</a>
+                </li>
+                <li class="active">
+                    <a href="#">提现</a>
+                </li>
+                <li>
+                    <a href="account-bankcard1.html">银行卡</a>
+                </li>
+                <li>
+                    <a href="account-bill1.html">账单明细</a>
+                </li>
+            </ul>
+        </div>
+        <!--右侧主要内容-->
+        <div class="content">
+            <!--带背景图的用户信息部分-->
+            <div class="userinfo">
+                <div class="lf userphoto">
+                    <img src="img/user_photo.png" alt=""/>
+                </div>
+                <div class="lf usermsg">
+                    <p>账户余额 :<span>0.00</span>元</p>
+                    <p>银行卡 :<span>2</span>张</p>
+                </div>
+            </div>
+            <h4 class="drawcashtit">提现反馈</h4>
+            <div class="feedback">
+                <div class="feedbacktit">
+                    <i class="hourglass"></i>提现申请已提交，等待银行处理......
+                </div>
+                <div class="feedback-content">
+                    <p>如果银行信息填写错误，导致提前失败，资金将自动返还到你账户余额</p>
+                    <div class="progressbar">
+                        <div class="line"></div>
+                        <div class="step1 lf">
+                            <p class="progresstext">提现申请</p>
+                            <span class="active"><i></i></span>
+                            <p class="progresstime">2016-9-18 21::49</p>
+                        </div>
+                        <div class="step2 lf">
+                            <p class="progresstext">银行处理</p>
+                            <span><i></i></span>
+                            <p class="progresstime">2016-9-18 21::49</p>
+                        </div>
+                        <div class="step3 lf">
+                            <p class="progresstext">提现成功</p>
+                            <span><i></i></span>
+                            <p class="progresstime">2016-9-18 21::49</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="link">
+                    <a href="">继续提现</a>
+                    <a href="">查看提现记录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左侧导航鼠标悬停的提示框-->
+    <div class="aside-nav-hover">
+        <div class="triangle"></div>
+        <div class="nav-text"></div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>

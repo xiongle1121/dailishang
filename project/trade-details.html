@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>交易管理----订单详情</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/trade-details.css" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="img/logo-white.png" alt=""/>
+        </a>
+        <button type="button" class="exit">退出</button>
+    </div>
+    <!--左侧导航-->
+    <div class="aside-nav" id="aside-nav">
+        <p class="menubtn" id="menubtn">
+            <i class="caidan"></i><!--<img src="img/caidan.png" alt=""/>-->
+        </p>
+        <ul class="menu" id="aside-menu">
+            <li class="shangpin" data-tip="商品管理">
+                <a href="publish-product1.html">
+                    <i class="nav-icon"></i>
+                    <span>商品管理</span>
+                </a>
+            </li>
+            <li class="jiaoyi active" data-tip="交易管理">
+                <a href="#">
+                    <i class="nav-icon"></i>
+                    <span>交易管理</span>
+                </a>
+            </li>
+            <li class="account" data-tip="我的账户">
+                <a href="account-recharge1.html">
+                    <i class="nav-icon"></i>
+                    <span>我的账户</span>
+                </a>
+            </li>
+            <li class="xiajia" data-tip="管理下家">
+                <a href="my-partner1.html">
+                    <i class="nav-icon"></i>
+                    <span>管理下家</span>
+                </a>
+            </li>
+            <li class="safety" data-tip="安全管理">
+                <a href="safety-mima.html">
+                    <i class="nav-icon"></i>
+                    <span>安全管理</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main">
+        <!--商品管理导航-->
+        <div class="main-nav">
+            <h3>交易管理</h3>
+            <ul>
+                <li class="active">
+                    <a href="#">订单管理</a>
+                </li>
+            </ul>
+        </div>
+        <!--右侧主要内容-->
+        <div class="content">
+            <h3>订单详情</h3>
+            <div class="progress-content">
+                <div class="ordermsg clear">
+                    <p>
+                        订单编号 :
+                        <span>1456778961422358</span>
+                    </p>
+                    <p>
+                        当前状态 :
+                        <span>已发货</span>
+                    </p>
+                </div>
+                <div class="progressbar">
+                    <div class="line">
+                        <i class="box-v0 box-active"></i>
+                        <i class="box-v1 box-active"></i>
+                        <i class="box-v2"></i>
+                        <i class="box-v3"></i>
+                    </div>
+                    <div class="step1 lf">
+                        <p class="progresstext">提交订单</p>
+                        <span class="active">1</span>
+                        <p class="progresstime">2016-09-18 21:20:49</p>
+                    </div>
+                    <div class="step2 lf">
+                        <p class="progresstext">买家支付</p>
+                        <span class="active">2</span>
+                        <p class="progresstime">2016-9-18 21:20:49</p>
+                    </div>
+                    <div class="step3 lf">
+                        <p class="progresstext">卖家发货</p>
+                        <span class="active">3</span>
+                        <p class="progresstime">2016-9-18 21:20:49</p>
+                    </div>
+                    <div class="step4 lf">
+                        <p class="progresstext">确认收货</p>
+                        <span>4</span>
+                        <p class="progresstime">2016-9-18 21:20:49</p>
+                    </div>
+                    <div class="step5 lf">
+                        <p class="progresstext">交易成功</p>
+                        <span>5</span>
+                        <p class="progresstime">2016-9-18 21:20:49</p>
+                    </div>
+                </div>
+                <!--详细信息-->
+                <div class="details-info">
+                    <h4>详细信息</h4>
+                    <ul>
+                        <li>
+                            <em>收货人 :</em>
+                            <span>何小强</span>
+                        </li>
+                        <li>
+                            <em>收货地址 :</em>
+                            <span>
+                                湖南省 郴州市 汝城县 吉祥路58号
+                            </span>
+                        </li>
+                        <li>
+                            <em>联系方式 :</em>
+                            <span>12345678965</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--发票信息-->
+                <div class="bill-info">
+                    <h4>发票信息</h4>
+                    <ul>
+                        <li>
+                            <em>发票抬头 :</em>
+                            <span>思珀科技有限公司</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--物流信息-->
+                <div class="logistic">
+                    <h4>物流信息</h4>
+                    <ul>
+                        <li>
+                            <em>发货时间 :</em>
+                            <span>2015-02-27 19:21:12</span>
+                        </li>
+                        <li>
+                            <em>物流公司 :</em>
+                            <span>
+                                <strong>圆通速递</strong>
+                                <a href="" class="green">点击进入物流官网</a>
+                            </span>
+                        </li>
+                        <li>
+                            <em>快递单号 :</em>
+                            <span>854796213547232145698</span>
+                        </li>
+                        <li>
+                            <em>物流跟踪 :</em>
+                            <div class="track-info">
+                                <p>2016-02-28 02:25:30 广东省广州市客户公司(<a href="#">点击查询电话</a>) 已揽收</p>
+                                <p>2016-02-28 02:25:30 广东省广州市客户公司 已打包</p>
+                                <p>2016-02-28 02:25:30 广东省广州市转运中心 已收入</p>
+                                <p>2016-02-28 02:25:30 广州转运中心已发出，下一站 衡阳转运中心</p>
+                                <p>2016-02-28 02:25:30 衡阳转运中心 已收入</p>
+                                <p>2016-02-28 02:25:30 衡阳转运中心已发出，下一站 湖南省郴州市</p>
+                                <p class="arrive">
+                                    2016-03-01 12:12:12 客户 签收人：东方 已签收 感谢使用圆通速递，期待再次为您服务
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--商品清单-->
+                <div class="pro-order">
+                    <h4>商品清单</h4>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="45%" class="text-left">商品</th>
+                                    <th width="10%">单价（元）</th>
+                                    <th width="10%">数量</th>
+                                    <th width="35%">
+                                        <div class="text-right">
+                                            交易状态
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="lf prophoto">
+                                            <a href="">
+                                                <img src="img/sale-product.jpg" alt=""/>
+                                            </a>
+                                        </div>
+                                        <div class="lf promsg">
+                                            <p>
+                                                <a href="#">qiankou 新款混色宽新款混色宽松套头毛衣新款混色宽松套头毛衣</a>
+                                                <a href="#">[交易快照]</a>
+                                            </p>
+                                            <p>尺码 : M</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center">
+                                            <s class="gray">99.9</s><br/>
+                                            <strong>49.50</strong>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center">1</div>
+                                    </td>
+                                    <td>
+                                        <div class="text-right gray">买家预约中</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="gray leavemsg">买家留言 : 暂无留言</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左侧导航鼠标悬停的提示框-->
+    <div class="aside-nav-hover">
+        <div class="triangle"></div>
+        <div class="nav-text"></div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+/********** content 最右侧内容 *****/
+.content{
+    position:absolute;
+    left:180px;
+    right:0;
+    top:0;
+    bottom:0;
+    padding-left:30px;
+    background-color:#fff;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+/*顶部带背景图的用户信息部分*/
+.userinfo{
+    height:110px;
+    padding-left:35px;
+    background:url(../img/account.jpg) no-repeat 0 -80px;
+    overflow:hidden;
+}
+.userinfo .userphoto{
+    width:86px;
+    height:86px;
+    margin-top:11px;
+    border-radius:50%;
+}
+.userinfo .userphoto img{
+    width:100%;
+    height:100%;
+}
+.userinfo .usermsg{
+    color:#fff;
+    line-height:110px;
+    margin-left:15px;
+}
+.userinfo .usermsg p{
+    float:left;
+    margin-right:35px;
+}
+.userinfo .usermsg span{
+    padding:0 5px;
+}
+/*标题*/
+.rechargetit{
+    white-space:nowrap;
+    height:52px;
+    line-height:52px;
+    font-size:18px;
+    font-weight:normal;
+    margin-right:30px;
+    border-bottom:2px solid #e1e1e1;
+}
+/********* 充值step1 网页样式 ********/
+.recharge-content{
+    margin:10px 0 0 354px;
+    width:750px;
+}
+.recharge-content .money input{
+    width:390px;
+    padding-left:10px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #e1e1e1;
+    border-radius:4px;
+    margin-left:20px;
+}
+/*支付方式行样式*/
+.payway{
+    margin:20px 0 10px;
+    height:72px;
+}
+.payway>span{
+    float:left;
+    margin:10px 35px 0 0;
+}
+.payway p{
+    float:left;
+    margin-right:20px;
+    width:68px;
+    height:68px;
+    text-align:center;
+    border:1px solid #e1e1e1;
+    cursor:pointer;
+}
+.payway p.active{
+    background:url(../img/checked.png) no-repeat right top;
+}
+.payway p i{
+    display:inline-block;
+    width:40px;
+    height:30px;
+    margin:12px 0 0;
+    background:url(../img/bank-card.png) no-repeat center center;
+}
+.payway p.weixin i{
+    background:url(../img/weixin.png) no-repeat center center;
+}
+/*点击显示出的内容 样式*/
+.details-way{
+    height:124px;
+    position:relative;
+}
+.details-way .weixin-content{
+    position:absolute;
+    top:0;
+    left:145px;
+    width:170px;
+    text-align:center;
+    font-size:12px;
+    display:none;
+}
+.details-way .weixin-content img{
+    width:80px;
+    height:80px;
+    margin-bottom:10px;
+}
+.details-way .card-content{
+    position:absolute;
+    left:0;
+    top:0;
+    display:none;
+}
+.details-way .card-content p{
+    margin-bottom:10px;
+    color:#666;
+}
+.details-way .card-content .cards{
+    margin-left:30px;
+    font-size:12px;
+}
+.details-way .cards>div{
+    float:left;
+}
+.details-way .card-content span{
+    display:inline-block;
+    margin-right:15px;
+    padding:0 6px;
+    width:180px;
+    height:38px;
+    line-height:38px;
+    border:1px solid #e1e1e1;
+    border-radius:4px;
+    cursor:default;
+}
+.details-way .cards input{
+    height:38px;
+    line-height:38px;
+    padding-right:4px;
+    *vertical-align:top;
+}
+.details-way .card-content input:checked+label span{
+    border:1px solid #A7AC2C;
+}
+.details-way .cards em,.recharge-content2 span.card em{
+    padding-left:20px;
+    height:38px;
+    background:url(../img/bank.png) no-repeat 0 center;
+}
+.details-way .cards b,.recharge-content2 span.card b{
+    letter-spacing:-6px;
+    padding-right:6px;
+}
+button.next,button.sure{
+    display:block;
+    width:86px;
+    text-align:center;
+    height:30px;
+    line-height:30px;
+    border-radius:5px;
+    color:#fff;
+    background-color:#38A6EB;
+}
+/******** 确认充值 页面样式 ********/
+.recharge-content2{
+    width:345px;
+    height:170px;
+    margin:70px auto 0;
+}
+.recharge-content2>div{
+    margin:0 0 15px 0;
+    height:40px;
+    line-height:40px;
+}
+.recharge-content2 .payway>span{
+    margin:0 10px 0 0;
+}
+.recharge-content2 .payway span.card{
+    width:182px;
+    padding:0 5px;
+    border:1px solid #e1e1e1;
+    border-radius:4px;
+    font-size:12px;
+}
+.recharge-content2 .paypwd input{
+    width:182px;
+    padding-left:10px;
+    height:38px;
+    line-height:38px;
+    border:1px solid #e1e1e1;
+    border-radius:4px;
+    margin:0 5px;
+    *vertical-align:middle;
+}
+.recharge-content2 a.forgetpwd{
+    color:#38A6EB;
+}
+button.sure{
+    margin:30px auto 0;
+}
+/********** 充值成功页面样式 *********/
+.recharge-success p,.recharge-fail p{
+    margin-top:70px;
+    text-align:center;
+}
+.recharge-success p i,.recharge-fail>p i{
+    display:inline-block;
+    width:22px;
+    height:22px;
+    margin-right:10px;
+    background:url(../img/success.png) no-repeat 0 0;
+    background-size:contain;
+    vertical-align:middle;
+}
+/*********** 充值失败页面样式 ***********/
+.recharge-fail>p i{
+    background-image:url(../img/fail-sad.png);
+}
+.recharge-fail>div{
+    margin-top:20px;
+    line-height:24px;
+    text-align:center;
+}
+.recharge-fail>div a{
+    color:#4bd039;
+    text-decoration:underline;
+    padding:0 5px;
+}

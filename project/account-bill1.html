@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>我的账户--账单明细</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/account-bill.css" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="img/logo-white.png" alt=""/>
+        </a>
+        <button type="button" class="exit">退出</button>
+    </div>
+    <!--左侧导航-->
+    <div class="aside-nav" id="aside-nav">
+        <p class="menubtn" id="menubtn">
+            <i class="caidan"></i><!--<img src="img/caidan.png" alt=""/>-->
+        </p>
+        <ul class="menu" id="aside-menu">
+            <li class="shangpin" data-tip="商品管理">
+                <a href="publish-product1.html">
+                    <i class="nav-icon"></i>
+                    <span>商品管理</span>
+                </a>
+            </li>
+            <li class="jiaoyi" data-tip="交易管理">
+                <a href="trade.html">
+                    <i class="nav-icon"></i>
+                    <span>交易管理</span>
+                </a>
+            </li>
+            <li class="account active" data-tip="我的账户">
+                <a href="#">
+                    <i class="nav-icon"></i>
+                    <span>我的账户</span>
+                </a>
+            </li>
+            <li class="xiajia" data-tip="管理下家">
+                <a href="my-partner1.html">
+                    <i class="nav-icon"></i>
+                    <span>管理下家</span>
+                </a>
+            </li>
+            <li class="safety" data-tip="安全管理">
+                <a href="safety-mima.html">
+                    <i class="nav-icon"></i>
+                    <span>安全管理</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="main">
+        <!--我的账户导航-->
+        <div class="main-nav">
+            <h3>我的账户</h3>
+            <ul>
+                <li>
+                    <a href="account-recharge1.html">充值</a>
+                </li>
+                <li>
+                    <a href="account-drawcash1.html">提现</a>
+                </li>
+                <li>
+                    <a href="account-bankcard1.html">银行卡</a>
+                </li>
+                <li class="active">
+                    <a href="">账单明细</a>
+                </li>
+            </ul>
+        </div>
+        <!--右侧主要内容-->
+        <div class="content">
+            <!--带背景图的用户信息部分-->
+            <div class="userinfo">
+                <div class="lf userphoto">
+                    <img src="img/user_photo.png" alt=""/>
+                </div>
+                <div class="lf usermsg">
+                    <p>账户余额 :<span>0.00</span>元</p>
+                    <p>银行卡 :<span>2</span>张</p>
+                </div>
+            </div>
+            <h4 class="mycardtit">账单明细</h4>
+            <div class="bill-content">
+                <div class="time">
+                    <span>时间&nbsp;:&nbsp;</span>
+                    <div class="today">
+                        <input class="laydate-icon" type="text" name="startTime" id="start" value=""/>
+                        <b>-</b>
+                        <input class="laydate-icon" type="text" name="endTime" id="end" value=""/>
+                        <em>今天</em>
+                    </div>
+                    <div class="line"></div>
+                    <div class="lately" id="lately">
+                        <span>最近 :</span>
+                        <strong class="active">1个月</strong>
+                        <strong>3个月</strong>
+                    </div>
+                </div>
+                <div class="choice">
+                    <div>
+                        <span>分类 : </span>
+                        <p id="classify">
+                            <span class="active">购物</span>
+                            <span>转账</span>
+                            <span>充值</span>
+                            <span>提现</span>
+                        </p>
+                    </div>
+                    <div>
+                        <span>类型 : </span>
+                        <p id="type">
+                            <span class="active">全部</span>
+                            <span>进行中</span>
+                            <span>未付款</span>
+                            <span>等待发货</span>
+                            <span>已发货</span>
+                            <span>退款</span>
+                            <span>成功</span>
+                            <span>失败</span>
+                        </p>
+                    </div>
+                </div>
+                <table class="bill-table">
+                    <thead>
+                        <tr>
+                            <th width="5%">分类</th>
+                            <th width="5%">创建时间</th>
+                            <th width="25%" class="text-left"><span>名称</span><span>对方</span><span>交易号</span></th>
+                            <th width="12%">金额</th>
+                            <th width="5%">状态</th>
+                            <th class="padleft">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="classifyPic">
+                                    <img src="img/shop-car.png" alt=""/>
+                                </div>
+                            </td>
+                            <td>
+                                <p>昨天</p>
+                                <p class="gray">16:20</p>
+                            </td>
+                            <td>
+                                <div class="promsg">
+                                    <p>
+                                        <a href="#">zippo打火机zippo正版 原装进口包邮打火机</a>
+                                    </p>
+                                    <p class="gray">
+                                        <span class="lf">
+                                            <a href="#" class="gray">天祺烟具店</a>
+                                        </span>
+                                        <span class="rt">流水号 : <em>2016111</em></span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="gray">
+                                    +100.00
+                                </div>
+                            </td>
+                            <td>
+                                <div class="gray">
+                                    成功
+                                </div>
+                            </td>
+                            <td>
+                                <div class="text-right">
+                                    <a href="account-bill2.html" class="blue">
+                                        详情<i class="arrow-down"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="classifyPic">
+                                    <img src="img/shop-car.png" alt=""/>
+                                </div>
+                            </td>
+                            <td>
+                                <p>昨天</p>
+                                <p class="gray">16:20</p>
+                            </td>
+                            <td>
+                                <div class="promsg">
+                                    <p>
+                                        <a href="#">zippo打火机zippo正版 原装进口包邮打火机</a>
+                                    </p>
+                                    <p class="gray">
+                                        <span class="lf">
+                                            <a href="#" class="gray">天祺烟具店</a>
+                                        </span>
+                                        <span class="rt">流水号 ; <em>2016111</em></span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="gray">
+                                    +100.00
+                                </div>
+                            </td>
+                            <td>
+                                <div class="gray">
+                                    成功
+                                </div>
+                            </td>
+                            <td>
+                                <div class="text-right">
+                                    <a href="#" class="blue">
+                                        详情<i class="arrow-down"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--左侧导航鼠标悬停的提示框-->
+    <div class="aside-nav-hover">
+        <div class="triangle"></div>
+        <div class="nav-text"></div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="laydate/laydate.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+//        日期选择插件
+        var start = {
+            elem: '#start',
+            format: 'YYYY.MM.DD',
+            istime: false,
+            istoday: false,
+            isclear:true,
+            event:'focus',
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#end',
+            format: 'YYYY.MM.DD',
+            istime: false,
+            istoday: false,
+            isclear:true,
+            event:'focus',
+            choose: function(datas){
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+      $(function(){
+//            最近1个月/3个月的点击切换
+            $('#lately').on('click','strong',function(){
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+//            分类、类型的反击切换效果
+            $('#classify,#type').on('click','span',function(){
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+        })
+    </script>
+</body>
+</html>
